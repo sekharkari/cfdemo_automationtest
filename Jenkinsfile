@@ -11,8 +11,7 @@ node {
    def mvnHome = tool 'M3'
 
    // Mark the code build 'stage'....
-   stage 'Build'
+   stage 'Test'
    sh "${mvnHome}/bin/mvn test"
-   step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar', fingerprint: true])
    
 }
